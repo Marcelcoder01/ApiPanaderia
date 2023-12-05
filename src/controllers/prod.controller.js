@@ -2,7 +2,7 @@ const { pool } = require('../database');
 
 
 async function getProduction(req, res){
-    let sql = `SELECT * FROM panaderia.produccion WHERE fecha BETWEEN ? AND ?;`
+    let sql = `SELECT * FROM bupykhzewtizasgw3aaz.panaderia WHERE fecha BETWEEN ? AND ?;`
     const{date1, date2} = req.query; //Aquí recogemos las dos fechas que nos envía el servicio
     const params = [date1, date2]; // las dos fechas pasan a ser los params de esta petición
   
@@ -17,7 +17,7 @@ async function getProduction(req, res){
 //función para obtener todos los items de la base de datos
 
 async function getAllProduction(req, res){
-    let sql = 'SELECT * FROM panaderia.produccion;'
+    let sql = 'SELECT * FROM bupykhzewtizasgw3aaz.panaderia;'
     try{
         const [result] = await pool.query(sql);
         res.json(result);
@@ -27,7 +27,7 @@ async function getAllProduction(req, res){
 }
 
 async function addProduction(req, res){
-    let sql = 'INSERT INTO panaderia.produccion (fecha, cantidad) VALUES (?, ?);'
+    let sql = 'INSERT INTO bupykhzewtizasgw3aaz.panaderia (fecha, cantidad) VALUES (?, ?);'
     const{fecha, cantidad } = req.body;
     const fechaDate = fecha ? new Date(fecha) : null; //aquí pasamos la fecha a formato Date, si no llega nada entonces fecha sería null
     const params = [fechaDate, cantidad];

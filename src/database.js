@@ -5,10 +5,10 @@ const mysql = require("mysql2/promise");
 const pool = mysql.createPool({
     
     
-    host: process.env.DB_HOST         || "localhost",
-    user: process.env.DB_USER         || "root",
-    password: process.env.DB_PASSWORD || "Lahabana324b6",
-    database: process.env.DB_NAME     || "panaderia",
+    host: process.env.DB_HOST         || "bupykhzewtizasgw3aaz-mysql.services.clever-cloud.com",
+    user: process.env.DB_USER         || "urdvf0cwh2rqfeu6",
+    password: process.env.DB_PASSWORD || "6QqyhovEFTVrknm0VbIk",
+    database: process.env.DB_NAME     || "bupykhzewtizasgw3aaz",
     port: process.env.DB_PORT         || "3306",
 
     waitForConnections: true,
